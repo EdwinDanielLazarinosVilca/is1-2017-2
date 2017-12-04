@@ -2,15 +2,28 @@ package domain;
 
 import java.util.List;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+@Entity
 public class Curso implements BaseEntity<Long> {
+
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)	
 	private Long id;
-
+	
+	@Column (length = 64)
 	private String codigo;
-
+	
+	@Column (length = 64)
 	private String nombre;
-
+	
+	@Column (length = 64)
 	private Integer creditos;
-
+	
+	@Column (length = 64)
 	private List<Curso> prerequisitos;
 
 	@Override
